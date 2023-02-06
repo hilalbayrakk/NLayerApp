@@ -19,7 +19,7 @@ namespace NLayer.Repository.Repositories
             _dbSet = context.Set<T>();
         }
 
-      
+
         public async Task AddAsync(T entity)
         {
             await _dbSet.AddAsync(entity);
@@ -35,9 +35,14 @@ namespace NLayer.Repository.Repositories
             return await _dbSet.AnyAsync(expression);
         }
 
-        public IQueryable<T> GetAll(Expression<Func<T, bool>> expression)
+        public IQueryable<T> GetAll()
         {
-            return _dbSet.AsNoTracking().AsQueryable(); 
+            return _dbSet.AsNoTracking().AsQueryable();
+        }
+
+        public IQueryable<T> GetAllAsync()
+        {
+            return _dbSet.AsNoTracking().AsQueryable();
         }
 
         public async Task<T> GetByIdAsync(int id)
@@ -57,7 +62,7 @@ namespace NLayer.Repository.Repositories
 
         public void Update(T entity)
         {
-            _dbSet.Update(entity);  
+            _dbSet.Update(entity);
         }
 
         public IQueryable<T> Where(Expression<Func<T, bool>> expression)
