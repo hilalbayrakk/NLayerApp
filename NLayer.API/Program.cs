@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using NLayer.Core.Repositories;
 using NLayer.Core.UnitOfWorks;
 using NLayer.Repository;
+using NLayer.Repository.Models;
 using NLayer.Repository.Repositories;
 using NLayer.Repository.UnifOfWorks;
 using System.Reflection;
